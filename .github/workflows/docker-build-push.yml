@@ -28,8 +28,11 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build -t mithu13579/devops-qr-code-api ./api
-          docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api:v2
+          docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api:latest
+          docker build -t mithu13579/devops-qr-code-frontend ./front-end-nextjs
+          docker tag mithu13579/devops-qr-code-frontend mithu13579/devops-qr-code-frontend:latest
 
       - name: Push docker image to Dockerhub
         run: |
-          docker push mithu13579/devops-qr-code-api:v2
+          docker push mithu13579/devops-qr-code-api:latest
+          docker push mithu13579/devops-qr-code-frontend:latest
