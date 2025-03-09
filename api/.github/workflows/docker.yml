@@ -28,4 +28,8 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build -t mithu13579/devops-qr-code-api .
-          docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api/:v2
+          docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api:v2
+
+      - name: Push docker image to Dockerhub
+        run: |
+          docker push mithu13579/devops-qr-code-api:v2
