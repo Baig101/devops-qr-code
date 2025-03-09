@@ -27,7 +27,7 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build the Docker image
         run: |
-          docker build -t mithu13579/devops-qr-code-api .
+          docker build -t mithu13579/devops-qr-code-api ./api
           docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api:v2
 
       - name: Push docker image to Dockerhub
