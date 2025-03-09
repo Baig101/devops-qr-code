@@ -27,11 +27,5 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build the Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }} .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/my-app:latest
-
-      # Step 4: Push the Docker image to Docker Hub
-      - name: Push Docker image to Docker Hub
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          docker build -t mithu13579/devops-qr-code-api .
+          docker tag mithu13579/devops-qr-code-api mithu13579/devops-qr-code-api/:v2
